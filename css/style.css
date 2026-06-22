@@ -1,0 +1,21 @@
+:root {
+    --vp-burgundy: #4A1525;
+    --vp-gold: #D4AF37;
+    --vp-charcoal: #1C1A1A;
+    --vp-cream: #FDFBF7;
+    --vp-muted: #6C757D;
+}
+
+body {
+    background-color: var(--vp-cream);
+    color: var(--vp-charcoal);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-dark {
+    background-color: var(--vp-charcoal) !important;
+}
+
+.text-gold {
+    color: var(--vp-gold) !important;
+}
