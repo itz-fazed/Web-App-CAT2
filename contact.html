@@ -49,8 +49,59 @@
 
     <!-- Main Container Content -->
     <main class="container my-5">
-        <h2>Book Your Private Experience</h2>
-        <p>Placeholder content for our luxury legacy and sommelier team.</p>
+        <section class="container py-5 my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 max-width-600">
+            
+                <span class="text-muted font-monospace small text-uppercase tracking-widest d-block text-center mb-2">Exclusive Access</span>
+                <h2 class="fw-bold font-monospace text-dark text-uppercase text-center mb-5 fs-3">Book your Private Experience</h2>
+
+                <form id="invitationForm" class="needs-validation" novalidate>
+                
+                    <div class="mb-4">
+                    <label for="fullName" class="form-label font-monospace small text-uppercase text-dark fw-bold">Full Name</label>
+                    <input type="text" class="form-control rounded-0 border-dark-subtle py-2" id="fullName" required>
+                    <div class="invalid-feedback font-monospace small">Please provide your name so we know who to address.</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label for="email" class="form-label font-monospace small text-uppercase text-dark fw-bold">Email Address</label>
+                            <input type="email" class="form-control rounded-0 border-dark-subtle py-2" id="email" required>
+                            <div class="invalid-feedback font-monospace small">Please enter a valid luxury-invite destination email.</div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <label for="phone" class="form-label font-monospace small text-uppercase text-dark fw-bold">Phone Number</label>
+                            <input type="tel" class="form-control rounded-0 border-dark-subtle py-2" id="phone" required>
+                            <div class="invalid-feedback font-monospace small">A valid phone number is required for booking confirmations.</div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label for="eventDate" class="form-label font-monospace small text-uppercase text-dark fw-bold">Desired Date</label>
+                            <input type="date" class="form-control rounded-0 border-dark-subtle py-2" id="eventDate" required>
+                            <div class="invalid-feedback font-monospace small" id="dateError">Please select a future reservation date.</div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <label for="guestCount" class="form-label font-monospace small text-uppercase text-dark fw-bold">Expected Guests</label>
+                            <input type="number" class="form-control rounded-0 border-dark-subtle py-2" id="guestCount" required>
+                            <div class="invalid-feedback font-monospace small" id="guestError">Our custom lounge setups require a minimum of 6 attendees.</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-outline-dark rounded-0 px-5 py-3 text-uppercase small tracking-widest w-100">
+                            Submit Request
+                        </button>
+                    </div>
+
+                </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-dark text-white py-3 mt-auto border-top border-secondary">
@@ -60,5 +111,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
