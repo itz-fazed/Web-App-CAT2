@@ -1,1 +1,13 @@
 How do i make the nav bar collapsible on mobile?
+Add cursive style for brand name
+Add hero image like Curated tastings website
+Make the index.html while overlay more transparent and decide the better hero background
+Add a want to dine with us in the index.html
+Make homepage description font darker
+Choose the hero image
+If minimum 6 attendees, make the list not show less than 6 and default 6
+Make sure form details dont disappear when you refresh or exit the page
+Make receipt prompt appear in the middle of page, and make it return the user return to the home page
+Learn more on home page to lead to services page
+Reduce line when showing current page on the hamburger menu
+Let the nav bar reapper when you swipe back up
