@@ -42,3 +42,13 @@ body {
 .delay-senses {
     transition-delay: 1.5s;
 }
+
+/* Completely hide the scrollbar track and thumb while keeping scroll features */
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
