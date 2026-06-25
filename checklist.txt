@@ -10,4 +10,7 @@ Make sure form details dont disappear when you refresh or exit the page
 Make receipt prompt appear in the middle of page, and make it return the user return to the home page
 Learn more on home page to lead to services page
 Reduce line when showing current page on the hamburger menu
-Let the nav bar reapper when you swipe back up
+Let the nav bar reappear when you swipe back up
+Notice how on vault.html the way the images have some sort of grey outline
+For the VIP #2, let the wines be heavily discounted and make sure that the wines are from the cellar that acquires wines from...with a handwritten note thanking you for your patronage
+Eventually find a way to slow down the top track in the carousel
