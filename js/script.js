@@ -63,72 +63,85 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Carousel logic
-    const topTrack = document.getElementById("trackTop");
-    const bottomTrack = document.getElementById("trackBottom");
+        const topTrack = document.getElementById("trackTop");
+        const bottomTrack = document.getElementById("trackBottom");
 
-    if (!topTrack || !bottomTrack) return;
+        if (!topTrack || !bottomTrack) return;
 
-    let isUserInteracting = false;
-    
-    // Set initial offset for the bottom track so they slide past each other dynamically
-    bottomTrack.scrollLeft = 400;
+        const cloneItems = (track) => {
+            const originalItems = Array.from(track.children);
+            originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+            originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+        };
 
-    // 1. STUTTER-PROOF AUTO-ANIMATION ENGINE
-    // Moves exactly 1 pixel at a time. Increase 40 to 50 or 60 to slow it down even more.
-    const scrollInterval = setInterval(() => {
-        if (!isUserInteracting) {
-            // Top track crawls forward (Right)
-            topTrack.scrollLeft += 1;
-            if (topTrack.scrollLeft >= (topTrack.scrollWidth - topTrack.clientWidth)) {
-                topTrack.scrollLeft = 0; // Seamless loop wrap
+        cloneItems(topTrack);
+        cloneItems(bottomTrack);
+
+        let isUserInteracting = false;
+        const speed = 0.34; 
+
+        const initLoop = () => {
+        const computedGap = parseFloat(window.getComputedStyle(topTrack).gap) || 48;
+        const itemWidth = topTrack.children[0].offsetWidth + computedGap;
+        const totalOriginalWidth = itemWidth * 5; // 5 is your original item count
+
+        bottomTrack.scrollLeft = totalOriginalWidth;
+
+        function glideRunways() {
+            if (!isUserInteracting) {
+                topTrack.scrollLeft += speed;
+                if (topTrack.scrollLeft >= totalOriginalWidth) {
+                    topTrack.scrollLeft -= totalOriginalWidth;
+                }
+
+                bottomTrack.scrollLeft -= speed;
+                if (bottomTrack.scrollLeft <= 0) {
+                    bottomTrack.scrollLeft += totalOriginalWidth;
+                }
             }
-
-            // Bottom track crawls backward (Left)
-            bottomTrack.scrollLeft -= 1;
-            if (bottomTrack.scrollLeft <= 0) {
-                bottomTrack.scrollLeft = bottomTrack.scrollWidth - bottomTrack.clientWidth; // Seamless loop wrap
-            }
+            requestAnimationFrame(glideRunways);
         }
-    }, 40); 
+        requestAnimationFrame(glideRunways);
+    };
 
-    // 2. MOUSE DRAG & TOUCH CONTROLLER (Responds to Cursor)
-    const tracks = [topTrack, bottomTrack];
-    
-    tracks.forEach(track => {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+    // Runs immediately if images are cached, or waits if they are still downloading
+    if (topTrack.children[0].offsetWidth > 0) {
+        initLoop();
+    } else {
+        window.addEventListener("load", initLoop);
+    }
 
-        track.addEventListener("mousedown", (e) => {
-            isDown = true;
-            isUserInteracting = true;
-            track.style.cursor = "grabbing";
-            startX = e.pageX - track.offsetLeft;
-            scrollLeft = track.scrollLeft;
+        [topTrack, bottomTrack].forEach(track => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            track.addEventListener("mousedown", (e) => {
+                isDown = true;
+                isUserInteracting = true;
+                track.style.cursor = "grabbing";
+                startX = e.pageX - track.offsetLeft;
+                scrollLeft = track.scrollLeft;
+            });
+
+            const endDrag = () => {
+                isDown = false;
+                track.style.cursor = "grab";
+                setTimeout(() => { isUserInteracting = false; }, 1500);
+            };
+
+            track.addEventListener("mouseleave", endDrag);
+            track.addEventListener("mouseup", endDrag);
+
+            track.addEventListener("mousemove", (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - track.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                track.scrollLeft = scrollLeft - walk;
+            });
+
+            track.addEventListener("touchstart", () => { isUserInteracting = true; });
+            track.addEventListener("touchend", () => { setTimeout(() => { isUserInteracting = false; }, 1500); });
         });
-
-        track.addEventListener("mouseleave", () => {
-            isDown = false;
-            track.style.cursor = "grab";
-            setTimeout(() => { isUserInteracting = false; }, 1500); // Resume autoplay after 1.5s pause
-        });
-
-        track.addEventListener("mouseup", () => {
-            isDown = false;
-            track.style.cursor = "grab";
-            setTimeout(() => { isUserInteracting = false; }, 1500);
-        });
-
-        track.addEventListener("mousemove", (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - track.offsetLeft;
-            const walk = (x - startX) * 1.5; // Drag sensitivity multiplier
-            track.scrollLeft = scrollLeft - walk;
-        });
-
-        // Mobile Touch Support
-        track.addEventListener("touchstart", () => { isUserInteracting = true; });
-        track.addEventListener("touchend", () => { setTimeout(() => { isUserInteracting = false; }, 1500); });
-    });
 });
