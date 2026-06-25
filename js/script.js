@@ -61,4 +61,74 @@ document.addEventListener('DOMContentLoaded', function () {
             }); 
         },50);
     }
+
+    // Carousel logic
+    const topTrack = document.getElementById("trackTop");
+    const bottomTrack = document.getElementById("trackBottom");
+
+    if (!topTrack || !bottomTrack) return;
+
+    let isUserInteracting = false;
+    
+    // Set initial offset for the bottom track so they slide past each other dynamically
+    bottomTrack.scrollLeft = 400;
+
+    // 1. STUTTER-PROOF AUTO-ANIMATION ENGINE
+    // Moves exactly 1 pixel at a time. Increase 40 to 50 or 60 to slow it down even more.
+    const scrollInterval = setInterval(() => {
+        if (!isUserInteracting) {
+            // Top track crawls forward (Right)
+            topTrack.scrollLeft += 1;
+            if (topTrack.scrollLeft >= (topTrack.scrollWidth - topTrack.clientWidth)) {
+                topTrack.scrollLeft = 0; // Seamless loop wrap
+            }
+
+            // Bottom track crawls backward (Left)
+            bottomTrack.scrollLeft -= 1;
+            if (bottomTrack.scrollLeft <= 0) {
+                bottomTrack.scrollLeft = bottomTrack.scrollWidth - bottomTrack.clientWidth; // Seamless loop wrap
+            }
+        }
+    }, 40); 
+
+    // 2. MOUSE DRAG & TOUCH CONTROLLER (Responds to Cursor)
+    const tracks = [topTrack, bottomTrack];
+    
+    tracks.forEach(track => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        track.addEventListener("mousedown", (e) => {
+            isDown = true;
+            isUserInteracting = true;
+            track.style.cursor = "grabbing";
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+        });
+
+        track.addEventListener("mouseleave", () => {
+            isDown = false;
+            track.style.cursor = "grab";
+            setTimeout(() => { isUserInteracting = false; }, 1500); // Resume autoplay after 1.5s pause
+        });
+
+        track.addEventListener("mouseup", () => {
+            isDown = false;
+            track.style.cursor = "grab";
+            setTimeout(() => { isUserInteracting = false; }, 1500);
+        });
+
+        track.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 1.5; // Drag sensitivity multiplier
+            track.scrollLeft = scrollLeft - walk;
+        });
+
+        // Mobile Touch Support
+        track.addEventListener("touchstart", () => { isUserInteracting = true; });
+        track.addEventListener("touchend", () => { setTimeout(() => { isUserInteracting = false; }, 1500); });
+    });
 });
