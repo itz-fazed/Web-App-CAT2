@@ -19,3 +19,26 @@ body {
 .text-gold {
     color: var(--vp-gold) !important;
 }
+
+/* Animation "Before State" */
+.fade-in-line {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+/* 2. Animation "After State" */
+.fade-in-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Allow separate line transitions so they do not stack */
+.delay-welcome {
+    transition-delay: 0.3s;
+}
+.delay-senses {
+    transition-delay: 1.5s;
+}
