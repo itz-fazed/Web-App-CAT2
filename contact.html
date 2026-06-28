@@ -54,60 +54,98 @@
     </nav>
 
     <!-- Main Container Content -->
-    <main class="container my-5">
-        <section class="container py-5 my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-7 max-width-600">
+   <main class="container my-5 flex-grow-1">
+    <div class="text-center my-5 max-w-xl mx-auto">
+        <h1 class="font-monospace text-uppercase tracking-widest mb-3">Connect With Us</h1>
+        <p class="text-muted lead px-3">
+            Have questions about our exclusive allocations, dress codes, or access tiers? Explore our frequently answered questions or reach out directly to our Concierge Desk.
+        </p>
+        <div class="mx-auto bg-secondary my-4" style="height: 1px; width: 60px;"></div>
+    </div>
+    
+    <div class="row g-5">
+        
+        <section class="col-lg-6">
+            <h2 class="font-monospace text-uppercase tracking-wide mb-4">The Concierge Desk</h2>
+            <p class="text-muted small mb-4">
+                For private estate buyouts, media access, global vintner partnerships, or bespoke cellar sourcing, submit an inquiry to our lead sommelier concierge.
+            </p>
             
-                <span class="text-muted font-monospace small text-uppercase tracking-widest d-block text-center mb-2">Exclusive Access</span>
-                <h2 class="fw-bold font-monospace text-dark text-uppercase text-center mb-5 fs-3">Book your Private Experience</h2>
-
-                <form id="invitationForm" class="needs-validation" novalidate>
-                
-                    <div class="mb-4">
-                    <label for="fullName" class="form-label font-monospace small text-uppercase text-dark fw-bold">Full Name</label>
-                    <input type="text" class="form-control rounded-0 border-dark-subtle py-2" id="fullName" required>
-                    <div class="invalid-feedback font-monospace small">Please provide your name so we know who to address.</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <label for="email" class="form-label font-monospace small text-uppercase text-dark fw-bold">Email Address</label>
-                            <input type="email" class="form-control rounded-0 border-dark-subtle py-2" id="email" required>
-                            <div class="invalid-feedback font-monospace small">Please enter a valid luxury-invite destination email.</div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <label for="phone" class="form-label font-monospace small text-uppercase text-dark fw-bold">Phone Number</label>
-                            <input type="tel" class="form-control rounded-0 border-dark-subtle py-2" id="phone" required>
-                            <div class="invalid-feedback font-monospace small">A valid phone number is required for booking confirmations.</div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <label for="eventDate" class="form-label font-monospace small text-uppercase text-dark fw-bold">Desired Date</label>
-                            <input type="date" class="form-control rounded-0 border-dark-subtle py-2" id="eventDate" required>
-                            <div class="invalid-feedback font-monospace small" id="dateError">Please select a future reservation date.</div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <label for="guestCount" class="form-label font-monospace small text-uppercase text-dark fw-bold">Expected Guests</label>
-                            <input type="number" class="form-control rounded-0 border-dark-subtle py-2" id="guestCount" required>
-                            <div class="invalid-feedback font-monospace small" id="guestError">Our custom lounge setups require a minimum of 6 attendees.</div>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-5">
-                        <button type="submit" class="btn btn-outline-dark rounded-0 px-5 py-3 text-uppercase small tracking-widest w-100">
-                            Submit Request
-                        </button>
-                    </div>
-
-                </form>
+            <form action="#" method="POST">
+                <div class="mb-3">
+                    <label for="clientName" class="form-label font-monospace small text-uppercase">Full Name</label>
+                    <input type="text" class="form-control rounded-0 bg-transparent border-secondary" id="clientName" required>
                 </div>
+                <div class="mb-3">
+                    <label for="clientEmail" class="form-label font-monospace small text-uppercase">Email Address</label>
+                    <input type="email" class="form-control rounded-0 bg-transparent border-secondary" id="clientEmail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="inquiryType" class="form-label font-monospace small text-uppercase">Inquiry Type</label>
+                    <select class="form-select rounded-0 bg-transparent border-secondary text-dark" id="inquiryType" required>
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="buyout">Private Venue Buyout / Corporate Event</option>
+                        <option value="sourcing">Bespoke Vintage Sourcing Request</option>
+                        <option value="partnership">Vintner / Vineyard Partnership</option>
+                        <option value="general">Media & Press Inquiries</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="clientMessage" class="form-label font-monospace small text-uppercase">Manifesto / Proposal Details</label>
+                    <textarea class="form-control rounded-0 bg-transparent border-secondary" id="clientMessage" rows="5" placeholder="Outline your requirements..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark rounded-0 w-100 font-monospace text-uppercase tracking-wider">Submit Inquiry</button>
+            </form>
+        </section>
+
+        <section class="col-lg-6">
+            <h2 class="font-monospace text-uppercase tracking-wide mb-4">Frequently Answered</h2>
+            
+            <div class="accordion accordion-flush border-top border-bottom border-secondary" id="faqAccordion">
+                
+                <div class="accordion-item bg-transparent">
+                    <h3 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed bg-transparent font-monospace small text-uppercase text-dark py-3 px-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                            Is there a strict dress code for entry?
+                        </button>
+                    </h3>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted small px-0 pt-0 pb-3">
+                            Yes. Both The Salon Lounge and The Midnight Vault enforce a strict dark-luxe/avant-garde aesthetic. Semi-formal attire is required; athletic wear, sandals, and casual graphics are prohibited.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-transparent">
+                    <h3 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed bg-transparent font-monospace small text-uppercase text-dark py-3 px-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
+                            Can I book an immediate table for a large party?
+                        </button>
+                    </h3>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted small px-0 pt-0 pb-3">
+                            To protect our intimate environment, standard reservations are capped at 6 guests maximum. Larger parties must contact the Concierge Desk directly via the form on this page for private layout arrangements.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-transparent">
+                    <h3 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed bg-transparent font-monospace small text-uppercase text-dark py-3 px-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
+                            What makes the midnight vault tier unique?
+                        </button>
+                    </h3>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted small px-0 pt-0 pb-3">
+                            The Vault opens precisely at midnight, highlighting unlisted subterranean cells, historic vintages, and intensive sommelier origin storytelling. Access requires a confirmed booking via our reservation portal.
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
+
+    </div>
     </main>
 
     <footer class="bg-dark text-white py-3 mt-auto border-top border-secondary">
