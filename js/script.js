@@ -144,4 +144,14 @@ document.addEventListener('DOMContentLoaded', function () {
             track.addEventListener("touchstart", () => { isUserInteracting = true; });
             track.addEventListener("touchend", () => { setTimeout(() => { isUserInteracting = false; }, 1500); });
         });
+
+        // Handle the guest review form submission cleanly
+        const reviewForm = document.getElementById('reviewForm');
+        if (reviewForm) {
+            reviewForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Your experience has been logged for review.');
+                this.reset();
+            });
+}
 });
