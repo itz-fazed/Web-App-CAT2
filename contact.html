@@ -56,97 +56,82 @@
     <!-- Main Container Content -->
    <main class="container my-5 flex-grow-1">
     <div class="text-center my-5 max-w-xl mx-auto">
-        <h1 class="font-monospace text-uppercase tracking-widest mb-3">Connect With Us</h1>
-        <p class="text-muted lead px-3">
+        <h1 class="h2 text-uppercase fw-light text-dark mb-3" style="letter-spacing: 0.15em;">Connect With Us</h1>
+        <p class="text-muted small lh-lg px-3" style="letter-spacing: 0.05em;">
             Have questions about our exclusive allocations, dress codes, or access tiers? Explore our frequently answered questions or reach out directly to our Concierge Desk.
         </p>
         <div class="mx-auto bg-secondary my-4" style="height: 1px; width: 60px;"></div>
     </div>
     
-    <div class="row g-5">
+    <div class="row g-5 justify-content-center">
         
-        <section class="col-lg-6">
-            <h2 class="font-monospace text-uppercase tracking-wide mb-4">The Concierge Desk</h2>
-            <p class="text-muted small mb-4">
-                For private estate buyouts, media access, global vintner partnerships, or bespoke cellar sourcing, submit an inquiry to our lead sommelier concierge.
-            </p>
+        <section class="col-12 col-md-6 fade-in-line delay-senses">
+            <div class="border-top border-dark pt-4 mb-4">
+                <span class="d-block text-muted text-uppercase small mb-2" style="letter-spacing: 0.2em;"> Inquiries</span>
+                <h2 class="h4 text-uppercase fw-light text-dark mb-3" style="letter-spacing: 0.1em;">The Concierge Desk</h2>
+                <p class="text-muted small lh-lg" style="letter-spacing: 0.05em;">
+                    For private estate buyouts, media access, global vintner partnerships, or bespoke cellar sourcing, submit an inquiry to our lead sommelier concierge.
+                </p>
+            </div>
             
-            <form action="#" method="POST">
-                <div class="mb-3">
-                    <label for="clientName" class="form-label font-monospace small text-uppercase">Full Name</label>
-                    <input type="text" class="form-control rounded-0 bg-transparent border-secondary" id="clientName" required>
+            <form action="#" method="POST" class="mt-4">
+                <div class="mb-4">
+                    <label for="clientName" class="font-monospace small text-uppercase text-muted mb-1 d-block" style="font-size: 0.7rem; letter-spacing: 0.1em;">Full Name</label>
+                    <input type="text" class="form-control bg-transparent border-secondary rounded-0 text-dark small font-monospace py-2" id="clientName" required>
                 </div>
-                <div class="mb-3">
-                    <label for="clientEmail" class="form-label font-monospace small text-uppercase">Email Address</label>
-                    <input type="email" class="form-control rounded-0 bg-transparent border-secondary" id="clientEmail" required>
+                <div class="mb-4">
+                    <label for="clientEmail" class="font-monospace small text-uppercase text-muted mb-1 d-block" style="font-size: 0.7rem; letter-spacing: 0.1em;">Email Address</label>
+                    <input type="email" class="form-control bg-transparent border-secondary rounded-0 text-dark small font-monospace py-2" id="clientEmail" required>
                 </div>
-                <div class="mb-3">
-                    <label for="inquiryType" class="form-label font-monospace small text-uppercase">Inquiry Type</label>
-                    <select class="form-select rounded-0 bg-transparent border-secondary text-dark" id="inquiryType" required>
-                        <option value="" disabled selected>Select an option...</option>
-                        <option value="buyout">Private Venue Buyout / Corporate Event</option>
-                        <option value="sourcing">Bespoke Vintage Sourcing Request</option>
-                        <option value="partnership">Vintner / Vineyard Partnership</option>
-                        <option value="general">Media & Press Inquiries</option>
+                <div class="mb-4">
+                    <label for="inquiryType" class="font-monospace small text-uppercase text-muted mb-1 d-block" style="font-size: 0.7rem; letter-spacing: 0.1em;">Inquiry Type</label>
+                    <select class="form-select bg-transparent border-secondary rounded-0 text-dark small font-monospace py-2" id="inquiryType" required>
+                        <option value="" disabled selected class="bg-white">Select an option...</option>
+                        <option value="buyout" class="bg-white">Private Venue Buyout / Corporate Event</option>
+                        <option value="sourcing" class="bg-white">Bespoke Vintage Sourcing Request</option>
+                        <option value="partnership" class="bg-white">Vintner / Vineyard Partnership</option>
+                        <option value="general" class="bg-white">Media & Press Inquiries</option>
                     </select>
                 </div>
                 <div class="mb-4">
-                    <label for="clientMessage" class="form-label font-monospace small text-uppercase">Manifesto / Proposal Details</label>
-                    <textarea class="form-control rounded-0 bg-transparent border-secondary" id="clientMessage" rows="5" placeholder="Outline your requirements..." required></textarea>
+                    <label for="clientMessage" class="font-monospace small text-uppercase text-muted mb-1 d-block" style="font-size: 0.7rem; letter-spacing: 0.1em;">Manifesto / Proposal Details</label>
+                    <textarea class="form-control bg-transparent border-secondary rounded-0 text-dark small font-monospace py-3" id="clientMessage" rows="4" placeholder="Outline your requirements..." required></textarea>
                 </div>
-                <button type="submit" class="btn btn-dark rounded-0 w-100 font-monospace text-uppercase tracking-wider">Submit Inquiry</button>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-outline-dark font-monospace text-uppercase small rounded-0 w-100 py-3 tracking-wider transition-all" style="font-size: 0.75rem; border-color: #ced4da; letter-spacing: 0.15em;">Submit Inquiry</button>
+                </div>
             </form>
         </section>
 
-        <section class="col-lg-6">
-            <h2 class="font-monospace text-uppercase tracking-wide mb-4">Frequently Answered</h2>
+        <section class="col-12 col-md-5 ps-md-5 fade-in-line delay-senses">
+            <div class="border-top border-dark pt-4 mb-4">
+                <span class="d-block text-muted text-uppercase small mb-2" style="letter-spacing: 0.2em;">Protocols</span>
+                <h2 class="h4 text-uppercase fw-light text-dark mb-3" style="letter-spacing: 0.1em;">Frequently Answered</h2>
+            </div>
             
-            <div class="accordion accordion-flush border-top border-bottom border-secondary" id="faqAccordion">
+            <div class="accordion accordion-flush border-top border-dark" id="faqAccordion">
                 
-                <div class="accordion-item bg-transparent">
+                <div class="accordion-item bg-transparent border-bottom border-secondary border-opacity-25">
                     <h3 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed bg-transparent font-monospace small text-uppercase text-dark py-3 px-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                        <button class="accordion-button collapsed bg-transparent font-monospace small text-uppercase text-dark py-3 px-0 border-0 shadow-none fw-light" style="letter-spacing: 0.05em; font-size: 0.8rem;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
                             Is there a strict dress code for entry?
                         </button>
                     </h3>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small px-0 pt-0 pb-3">
+                        <div class="accordion-body text-muted small px-0 pt-0 pb-3 lh-lg" style="letter-spacing: 0.05em;">
                             Yes. Both The Salon Lounge and The Midnight Vault enforce a strict dark-luxe/avant-garde aesthetic. Semi-formal attire is required; athletic wear, sandals, and casual graphics are prohibited.
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item bg-transparent">
+                <div class="accordion-item bg-transparent border-bottom border-secondary border-opacity-25">
                     <h3 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed bg-transparent font-monospace small text-uppercase text-dark py-3 px-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
+                        <button class="accordion-button collapsed bg-transparent font-monospace small text-uppercase text-dark py-3 px-0 border-0 shadow-none fw-light" style="letter-spacing: 0.05em; font-size: 0.8rem;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
                             Can I book an immediate table for a large party?
                         </button>
                     </h3>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small px-0 pt-0 pb-3">
-                            To protect our intimate environment, standard reservations are capped at 6 guests maximum. Larger parties must contact the Concierge Desk directly via the form on this page for private layout arrangements.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item bg-transparent">
-                    <h3 class="accordion-header" id="flush-headingThree">
-                        <button class="accordion-button collapsed bg-transparent font-monospace small text-uppercase text-dark py-3 px-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
-                            What makes the midnight vault tier unique?
-                        </button>
-                    </h3>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small px-0 pt-0 pb-3">
-                            The Vault opens precisely at midnight, highlighting unlisted subterranean cells, historic vintages, and intensive sommelier origin storytelling. Access requires a confirmed booking via our reservation portal.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </div>
-    </main>
+                        <div class="accordion-body text-muted small px-
 
     <footer class="bg-dark text-white py-3 mt-auto border-top border-secondary">
         <div class="container text-center text-muted">

@@ -56,57 +56,84 @@
 <!-- 2. THE MAIN HERO OVERLAY BLOCK -->
     <!-- The 'vh-100' ensures it takes up the exact viewport, and the text link is pinned to the absolute bottom -->
     <main class="w-100 vh-100 d-flex align-items-center position-relative text-white" 
-          style="background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('images/Paris Morning Light Wallpaper.jpg') no-repeat center center/cover; background-attachment: fixed;">
+        style="background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('images/Paris Morning Light Wallpaper.jpg') no-repeat center center/cover; background-attachment: fixed;">
         
         <div class="container text-center py-5">
             <div class="row justify-content-center">
-                <div class="col-lg-10 col-xl-8 max-width-700">
-                    <h1 class="display-3 fw-bold brand-heading text-dark mb-4 text-shadow-sm">The Velvet Grape Lounge</h1>
-                    <p class="lead text-secondary">
+                <div class="col-lg-10 col-xl-8">
+                    <h1 class="h2 text-uppercase fw-light text-dark mb-3" style="letter-spacing: 0.15em;">
+                        The Velvet Grape Lounge
+                    </h1>
+                    <p class="text-muted small lh-lg mx-auto mb-4" style="letter-spacing: 0.05em; max-width: 550px;">
                         Premium Mobile Wine & Sommelier Experiences brought directly to your doorstep.
                     </p>
-                    <a href="reservation.html" class="btn btn-outline-dark btn-lg rounded-0 px-5 py-3 text-uppercase small tracking-widest mt-4">
-                        Book a Reservation
-                    </a>
+                    <div class="mt-4">
+                        <a href="reservation.html" class="btn btn-outline-dark font-monospace text-uppercase small rounded-0 px-4 py-3 tracking-wider transition-all" style="font-size: 0.75rem; border-color: #ced4da; letter-spacing: 0.15em;">
+                            Book a Reservation
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Interactive Scroll Link: Styled identically to your minimalist nav links, pinned to the bottom center -->
         <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 pb-2 text-center">
-            <a href="#explore-lounge" class="text-dark fw-bold font-monospace text-uppercase small tracking-widest text-decoration-none border-bottom border-dark pb-1">
+            <a href="#explore-lounge" class="text-dark font-monospace text-uppercase small text-decoration-none border-bottom border-dark pb-1" style="font-size: 0.7rem; letter-spacing: 0.2em;">
                 Explore Lounge &darr;
             </a>
         </div>
     </main>
 
-    <!-- 3. THE REVEALING CONTENT CANVAS -->
-    <!-- This white sheet slides up over the fixed photo, offering full room to breathe for your extra content -->
-    <div id="explore-lounge" class="position-relative bg-white z-3 shadow-lg py-5">
+    <div id="explore-lounge" class="position-relative bg-white z-3 py-5">
         <div class="container py-5">
             
-            <!-- Three-Pillar "Signature Experiences" Row -->
             <div class="row g-5 text-center justify-content-center">
-                <div class="col-md-4">
-                    <span class="text-muted font-monospace small text-uppercase tracking-wider d-block mb-2">01 / Curated Flights</span>
-                    <h3 class="h5 fw-bold font-monospace text-dark text-uppercase">Bespoke Tastings</h3>
-                    <p class="text-secondary small px-lg-3">Tailored visual and flavor journeys through rare vintages, guided by certified sommeliers.</p>
+                
+                <div class="col-12 col-md-4">
+                    <div class="fade-in-line delay-senses border-top border-dark pt-4 mx-3">
+                        <span class="d-block text-muted text-uppercase small mb-2" style="letter-spacing: 0.2em; font-size: 0.75rem;">
+                            01 / Curated Flights
+                        </span>
+                        <h3 class="h5 text-uppercase fw-light mb-3" style="letter-spacing: 0.1em;">
+                            Bespoke Tastings
+                        </h3>
+                        <p class="text-muted small lh-lg mb-0" style="letter-spacing: 0.05em;">
+                            Tailored visual and flavor journeys through rare vintages, guided by certified sommeliers.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <span class="text-muted font-monospace small text-uppercase tracking-wider d-block mb-2">02 / Elite Ambiance</span>
-                    <h3 class="h5 fw-bold font-monospace text-dark text-uppercase">Mobile Lounges</h3>
-                    <p class="text-secondary small px-lg-3">We bring the physical luxury lounge atmosphere directly to your estate or corporate venue.</p>
+
+                <div class="col-12 col-md-4">
+                    <div class="fade-in-line delay-senses border-top border-dark pt-4 mx-3">
+                        <span class="d-block text-muted text-uppercase small mb-2" style="letter-spacing: 0.2em; font-size: 0.75rem;">
+                            02 / Elite Ambiance
+                        </span>
+                        <h3 class="h5 text-uppercase fw-light mb-3" style="letter-spacing: 0.1em;">
+                            Mobile Lounges
+                        </h3>
+                        <p class="text-muted small lh-lg mb-0" style="letter-spacing: 0.05em;">
+                            We bring the physical luxury lounge atmosphere directly to your estate or corporate venue.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <span class="text-muted font-monospace small text-uppercase tracking-wider d-block mb-2">03 / Masters of Lore</span>
-                    <h3 class="h5 fw-bold font-monospace text-dark text-uppercase">Sommelier Curation</h3>
-                    <p class="text-secondary small px-lg-3">Deep storytelling, historical context, and flawless service etiquettes for your elite guests.</p>
+
+                <div class="col-12 col-md-4">
+                    <div class="fade-in-line delay-senses border-top border-dark pt-4 mx-3">
+                        <span class="d-block text-muted text-uppercase small mb-2" style="letter-spacing: 0.2em; font-size: 0.75rem;">
+                            03 / Masters of Lore
+                        </span>
+                        <h3 class="h5 text-uppercase fw-light mb-3" style="letter-spacing: 0.1em;">
+                            Sommelier Curation
+                        </h3>
+                        <p class="text-muted small lh-lg mb-0" style="letter-spacing: 0.05em;">
+                            Deep storytelling, historical context, and flawless service etiquettes for your elite guests.
+                        </p>
+                    </div>
                 </div>
+
             </div>
 
         </div>
     </div>
-
     <!-- 4. The Footer -->
     <footer class="bg-dark text-white py-4 position-relative z-3">
         <div class="container text-center text-muted">
