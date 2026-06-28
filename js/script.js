@@ -12,31 +12,31 @@ document.addEventListener('DOMContentLoaded', function () {
         form.addEventListener('submit', function (event) {
             let isValid = true;
 
-            // 1. Reset standard browser validation styles
+            // a. Reset standard browser validation styles
             form.classList.remove('was-validated');
             dateInput.classList.remove('is-invalid');
             guestInput.classList.remove('is-invalid');
 
-            // 2. Custom Validation Logic: Date check (Double security check for past dates)
+            // b. Custom Validation Logic: Date check (Double security check for past dates)
             const selectedDate = dateInput.value;
             if (!selectedDate || selectedDate < today) {
                 dateInput.classList.add('is-invalid');
                 isValid = false;
             }
 
-            // 3. Custom Validation Logic: Lounge Minimum Guest Cap
+            // c. Custom Validation Logic: Lounge Minimum Guest Cap
             const guests = parseInt(guestInput.value, 10);
             if (isNaN(guests) || guests < 6) {
                 guestInput.classList.add('is-invalid');
                 isValid = false;
             }
 
-            // 4. Default Native Browser Validation Check (Empty fields, wrong emails)
+            // d. Default Native Browser Validation Check (Empty fields, wrong emails)
             if (!form.checkValidity()) {
                 isValid = false;
             }
 
-            // If anything is wrong, cancel submission
+            // e. If anything is wrong, cancel submission
             if (!isValid) {
                 event.preventDefault();
                 event.stopPropagation();
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },50);
     }
 
-    // Carousel logic
+    // 3. Carousel logic
         const topTrack = document.getElementById("trackTop");
         const bottomTrack = document.getElementById("trackBottom");
 
